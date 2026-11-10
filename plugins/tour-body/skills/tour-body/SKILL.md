@@ -25,7 +25,7 @@ Write (only after the user confirms):
 - `update_tour`: change a tour's details. Pass `expectedVersion` from `get_tour`.
 - `save_flight`, `save_train`, `save_stay`: create a record with `expectedVersion` 0, or edit one with its current version from `get_tour`.
 
-The connection can't delete anything, invite people, send messages or handle payments. If asked, say so and suggest doing it in the tour body app.
+The connection can't delete anything, invite people, send messages or handle payments. If asked, say so. Never blank out or overwrite a record to imitate deleting it. Inviting people and messaging the crew are done in the tour body app.
 
 ## Workflow
 
