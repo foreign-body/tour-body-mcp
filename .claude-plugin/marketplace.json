@@ -1,0 +1,18 @@
+{
+  "$schema": "https://anthropic.com/claude-code/marketplace.schema.json",
+  "name": "tour-body",
+  "description": "The tour body plugin by foreign body.",
+  "owner": {
+    "name": "foreign body",
+    "email": "club@foreignbody.life",
+    "url": "https://tour.foreignbody.app"
+  },
+  "plugins": [
+    {
+      "name": "tour-body",
+      "source": "./plugins/tour-body",
+      "description": "Read your tour body tours and, with your confirmation, create tours and save flights, trains and hotel stays.",
+      "category": "travel"
+    }
+  ]
+}

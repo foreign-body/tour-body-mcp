@@ -1,0 +1,51 @@
+{
+  "name": "tour-body",
+  "version": "1.0.0",
+  "description": "Read your tour body tours and, with your confirmation, create tours and save flights, trains and hotel stays.",
+  "author": {
+    "name": "foreign body",
+    "email": "club@foreignbody.life",
+    "url": "https://tour.foreignbody.app"
+  },
+  "homepage": "https://tour.foreignbody.app/guide/ai",
+  "repository": "https://github.com/foreign-body/tour-body-mcp",
+  "keywords": ["tour", "tour management", "itinerary", "flights", "trains", "hotels", "crew"],
+  "skills": "./skills/",
+  "mcpServers": "./.mcp.json",
+  "interface": {
+    "displayName": "tour body",
+    "shortDescription": "Manage tours, flights, hotels",
+    "longDescription": "tour body is foreign body's tour management app for artists, tour managers and crew. Connect it to work with your tours in conversation: read schedule days, members and their roles, flights, trains, hotel stays, document titles and reviewed details imported from your tour documents. After you review and approve a change, your agent can create a tour, update tour details and add or edit flights, trains and hotel stays.\n\nYou sign in on tour.foreignbody.app and approve the connection. It reaches only your own tour body account: the tours you can see in the app. It can't delete anything, invite people, send messages or make payments.\n\nConnecting requires a tour body account with PRO.",
+    "developerName": "foreign body",
+    "category": "Travel",
+    "capabilities": ["Read", "Write"],
+    "websiteURL": "https://tour.foreignbody.app/guide/ai",
+    "supportURL": "https://tour.foreignbody.app/support",
+    "privacyPolicyURL": "https://tour.foreignbody.app/privacy",
+    "termsOfServiceURL": "https://tour.foreignbody.app/terms",
+    "defaultPrompt": [
+      "Show my next tour day by day, including flights and hotel stays.",
+      "Help me add flights to my tour from my booking confirmation.",
+      "Which hotels are we staying at on my next tour, and when do we check in?"
+    ],
+    "brandColor": "#111111",
+    "composerIcon": "./assets/tour-body.png",
+    "logo": "./assets/tour-body.png"
+  },
+  "extensions": {
+    "com.openai": {
+      "publication": {
+        "translations": {
+          "ko-KR": {
+            "subtitle": "투어·항공·숙소 관리",
+            "description": "tour body는 아티스트, 투어 매니저, 크루를 위한 foreign body의 투어 관리 앱입니다. 연결하면 대화에서 투어의 날짜별 일정, 멤버와 역할, 항공·기차·숙소, 서류 제목, 서류에서 가져와 검토한 운영 정보를 확인할 수 있습니다. 내용을 확인하고 승인하면 에이전트가 투어를 만들거나 투어 정보를 수정하고, 항공·기차·숙소 일정을 추가하거나 고칠 수 있습니다.\n\ntour.foreignbody.app에서 로그인하고 연결을 승인합니다. 연결은 내 tour body 계정, 즉 앱에서 내가 볼 수 있는 투어에만 접근합니다. 삭제, 초대, 메시지 발송, 결제는 할 수 없습니다.\n\n연결하려면 PRO가 적용된 tour body 계정이 필요합니다."
+          },
+          "ja-JP": {
+            "subtitle": "ツアー・フライト・宿泊を管理",
+            "description": "tour bodyは、アーティスト、ツアーマネージャー、クルーのためのforeign bodyのツアー管理アプリです。接続すると、ツアーの日ごとの予定、メンバーと役割、フライト・鉄道・宿泊、書類のタイトル、書類から取り込んで確認済みの運営情報を会話の中で確認できます。内容を確認して承認すると、エージェントがツアーの作成やツアー情報の更新、フライト・鉄道・宿泊の追加や修正を行えます。\n\ntour.foreignbody.appでサインインし、接続を許可します。接続先はあなたのtour bodyアカウントだけで、アプリで表示できるツアーにのみアクセスします。削除、招待、メッセージの送信、支払いはできません。\n\n接続には、PROが有効なtour bodyアカウントが必要です。"
+          }
+        }
+      }
+    }
+  }
+}

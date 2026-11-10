@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "tour-body": {
+      "type": "http",
+      "url": "https://tour.foreignbody.app/mcp"
+    }
+  }
+}
