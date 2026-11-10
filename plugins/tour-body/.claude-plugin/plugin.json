@@ -1,7 +1,7 @@
 {
   "name": "tour-body",
   "displayName": "tour body",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Read your tour body tours and, with your confirmation, create tours and save flights, trains and hotel stays.",
   "author": {
     "name": "foreign body",
