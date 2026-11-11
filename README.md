@@ -2,7 +2,11 @@
 
 Connect Codex, ChatGPT and Claude Code to your [tour body](https://tour.foreignbody.app) account. tour body is foreign body's tour management app for artists, tour managers and crew.
 
-Your agent can read your tours: schedule days, members and their roles, flights, trains, hotel stays, document titles and reviewed details imported from tour documents. After you approve a change, it can create a tour, update tour details and add or edit flights, trains and hotel stays. It can't delete anything, invite people, send messages or make payments.
+Your agent can read your tours: schedule days, members and their roles, flights, trains, hotel stays, document titles and reviewed details imported from tour documents. After you approve a change, it can create a tour, update tour details and add or edit flights, trains and hotel stays.
+
+Promoters hosting visiting artists can run an inbound tour with it: add show days and teams, fill in each team's travel, pickups, hotel, schedule and backline from booking emails, see what is still open, decide guest requests and apply what artists sent back. Artists who saved a team from a promoter's link can acknowledge it, answer the promoter's requests and send guest requests.
+
+It can't delete anything, invite people, share team links, send messages or make payments, and it never returns guests' emails or phone numbers.
 
 ## What's in this repository
 

@@ -1,8 +1,8 @@
 {
   "name": "tour-body",
   "displayName": "tour body",
-  "version": "1.0.1",
-  "description": "Read your tour body tours and, with your confirmation, create tours and save flights, trains and hotel stays.",
+  "version": "1.0.2",
+  "description": "Read your tour body tours and, with your confirmation, create tours, save flights, trains and hotel stays, and run inbound tours for visiting artists.",
   "author": {
     "name": "foreign body",
     "email": "club@foreignbody.life",
@@ -10,7 +10,7 @@
   },
   "homepage": "https://tour.foreignbody.app/guide/ai",
   "repository": "https://github.com/foreign-body/tour-body-mcp",
-  "keywords": ["tour", "tour management", "itinerary", "flights", "trains", "hotels", "crew"],
+  "keywords": ["tour", "tour management", "itinerary", "flights", "trains", "hotels", "crew", "promoter", "inbound", "guest list"],
   "icon": "./assets/tour-body.png",
   "documentationUrl": "https://tour.foreignbody.app/guide/ai",
   "supportUrl": "https://tour.foreignbody.app/support",

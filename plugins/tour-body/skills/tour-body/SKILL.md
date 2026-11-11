@@ -1,6 +1,6 @@
 ---
 name: tour-body
-description: Read and update the user's own tour body account through the tour body connection. Use when the user mentions tour body, or asks about their tour's itinerary, schedule days, members, flights, trains, hotel stays, documents or imported tour details, or wants to create a tour or add or change a tour's flights, trains or hotel stays.
+description: Read and update the user's own tour body account through the tour body connection. Use when the user mentions tour body, or asks about their tour's itinerary, schedule days, members, flights, trains, hotel stays, documents or imported tour details, wants to create a tour or add or change a tour's flights, trains or hotel stays, or runs an inbound tour (a promoter hosting visiting artists: teams, their travel, pickups, hotels, backline, guest lists) or answers a promoter as a visiting artist.
 ---
 
 # tour body
@@ -25,7 +25,19 @@ Write (only after the user confirms):
 - `update_tour`: change a tour's details. Pass `expectedVersion` from `get_tour`.
 - `save_flight`, `save_train`, `save_stay`: create a record with `expectedVersion` 0, or edit one with its current version from `get_tour`.
 
-The connection can't delete anything, invite people, send messages or handle payments. If asked, say so. Never blank out or overwrite a record to imitate deleting it. Inviting people and messaging the crew are done in the tour body app.
+Inbound tours (`kind` inbound in `list_tours`), for a promoter hosting visiting teams:
+
+- Read: `get_inbound_tour` (show days, teams, readiness, link state, guest counts, what artists sent back), `get_team` (one team's items with section versions, the show day's common info, the timetable and the artist's answers), `list_guest_requests` (names and status; never emails or phone numbers).
+- Write: `save_day` (add or edit a schedule day), `save_team` (add a team to a show day or edit it with its revision), `save_team_items` (add or edit items in one team section with its version), `save_show_info` (the show day's venue, common schedule or contacts), `save_timetable` (set slots), `decide_guest` (confirm, hold or decline a guest request), `apply_artist_answers` (write accepted backline alternatives and request answers into the itinerary).
+
+Saved teams, for a visiting artist or their manager who saved a team from a promoter's link:
+
+- Read: `list_invited_teams`, `get_invited_team`.
+- Write: `acknowledge_itinerary`, `answer_info_request`, `accept_backline_offer`, `save_my_guest_request`, `place_team_on_my_tour`.
+
+The inbound and saved-team tools need a connection approved from 2026-11-12. If one answers that it needs the newer permissions, ask the user to reconnect tour body in their client and approve again; the other tools keep working.
+
+The connection can't delete anything, invite people, share team links or PINs, send messages or handle payments. If asked, say so. Never blank out or overwrite a record to imitate deleting it; to drop a team item, set its status to `cancelled` after the user confirms. Inviting people, sharing team links and messaging artists or the crew are done in the tour body app.
 
 ## Workflow
 
@@ -37,6 +49,15 @@ The connection can't delete anything, invite people, send messages or handle pay
 6. Report what changed. List each record created or updated with its key values as the tool returned them, and name the fields left null.
 
 If a write fails because the version no longer matches, the tour changed in the meantime. Call `get_tour` again, tell the user what is different, and confirm again before retrying. Never retry with a guessed version.
+
+### Inbound tours
+
+1. Order: a show day (`save_day`), then teams on it (`save_team`), then each team's items (`save_team_items`) and the show day's common info (`save_show_info`). The common info exists once the show day has a team.
+2. Read `get_inbound_tour` and `get_team` right before a change and pass the revision or section version they return (0 for an empty section).
+3. From a booking email, extract only what it states. Confirm the items, then save them in one call per section.
+4. Changing a team's items alerts artists who saved the itinerary in the app. Say so in the confirmation and report what changed.
+5. Ask before every `decide_guest` and `apply_artist_answers`, naming each guest or value. For a value that moved since the artist answered, apply with `force` only after the user agrees.
+6. As a visiting artist, show the request or alternative and the exact answer before `answer_info_request`, `accept_backline_offer` or `acknowledge_itinerary`. Questions and declines are sent in the app.
 
 ## Data rules
 
@@ -55,6 +76,13 @@ Trains:
 Hotel stays:
 
 - `checkIn` and `checkOut` are dates. `checkInTime` and `checkOutTime` are local times at the hotel. `timezone` is the hotel's IANA timezone when known; otherwise null.
+
+Inbound team items:
+
+- Times such as `departureAt`, `arrivalAt`, `pickupConfirmedAt` and `startsAt` are ISO-8601 instants with the offset of the place they happen: each airport for a flight, the venue for a set. Never convert them into another timezone.
+- `flightDate` is the local departure date at the departure airport, `flightNumber` is like `KE906` and `originIata`/`destinationIata` are three-letter airport codes. A flight number with its date lets tour body follow the flight live on PRO tours.
+- Timetable slots use the day's local `HH:MM` with day offset 1 after midnight. Use the team name as the performer for a visiting team.
+- Guest emails and phone numbers are never returned; don't ask the promoter for them.
 
 All records:
 
