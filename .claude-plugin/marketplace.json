@@ -11,7 +11,7 @@
     {
       "name": "tour-body",
       "source": "./plugins/tour-body",
-      "description": "Read your tour body tours and, with your confirmation, create tours, save flights, trains and hotel stays, and run inbound tours for visiting artists.",
+      "description": "Read your tour body tours and, with your confirmation, create tours, save flights, trains and hotel stays, run inbound tours for visiting artists and add packing items.",
       "category": "travel"
     }
   ]

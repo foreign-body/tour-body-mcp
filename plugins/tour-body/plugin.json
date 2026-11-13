@@ -1,8 +1,8 @@
 {
   "$schema": "https://agent-plugins.org/schemas/1.0.0/plugin.schema.json",
   "name": "tour-body",
-  "version": "1.0.2",
-  "description": "Read your tour body tours and, with your confirmation, create tours, save flights, trains and hotel stays, and run inbound tours for visiting artists.",
+  "version": "1.0.4",
+  "description": "Read your tour body tours and, with your confirmation, create tours, save flights, trains and hotel stays, run inbound tours for visiting artists and add packing items.",
   "author": {
     "name": "foreign body",
     "email": "club@foreignbody.life",
@@ -16,7 +16,7 @@
       "interface": {
         "displayName": "tour body",
         "shortDescription": "Manage tours, flights, hotels",
-        "longDescription": "tour body is foreign body's tour management app for artists, tour managers, promoters and crew. Connect it to work with your tours in conversation: read schedule days, members and their roles, flights, trains, hotel stays, document titles and reviewed details imported from your tour documents. After you review and approve a change, your agent can create a tour, update tour details and add or edit flights, trains and hotel stays.\n\nPromoters hosting visiting artists can run an inbound tour: add show days and teams, fill in each team's flights, pickups, hotel, schedule and backline from booking emails, see what is still open, decide guest requests and apply what artists sent back. Artists who saved a team from a promoter's link can acknowledge it, answer the promoter's requests and send guest requests.\n\nYou sign in on tour.foreignbody.app and approve the connection. It reaches only your own tour body account: the tours you can see in the app. It can't delete anything, invite people, share team links, send messages or make payments, and it never returns guests' emails or phone numbers.",
+        "longDescription": "tour body is foreign body's tour management app for artists, tour managers, promoters and crew. Connect it to work with your tours in conversation: read schedule days, members and their roles, flights, trains, hotel stays, document titles and reviewed details imported from your tour documents. After you review and approve a change, your agent can create a tour, update tour details, add or edit flights, trains and hotel stays, and add items to the team's packing list or your own, for example from a booking email.\n\nPromoters hosting visiting artists can run an inbound tour: add show days and teams, fill in each team's flights, pickups, hotel, schedule and backline from booking emails, see what is still open, decide guest requests and apply what artists sent back. Artists who saved a team from a promoter's link can acknowledge it, answer the promoter's requests and send guest requests.\n\nYou sign in on tour.foreignbody.app and approve the connection. It reaches only your own tour body account: the tours you can see in the app. Apart from packing items an AI added (you can restore those in tour body for 30 days), it can't delete anything. It can't invite people, share team links, send messages or make payments, and it never returns guests' emails or phone numbers.",
         "developerName": "foreign body",
         "category": "Travel",
         "capabilities": ["Read", "Write"],
@@ -37,11 +37,11 @@
         "translations": {
           "ko-KR": {
             "subtitle": "투어·항공·숙소 관리",
-            "description": "tour body는 아티스트, 투어 매니저, 프로모터, 크루를 위한 foreign body의 투어 관리 앱입니다. 연결하면 대화에서 투어의 날짜별 일정, 멤버와 역할, 항공·기차·숙소, 서류 제목, 서류에서 가져와 검토한 운영 정보를 확인할 수 있습니다. 내용을 확인하고 승인하면 에이전트가 투어를 만들거나 투어 정보를 수정하고, 항공·기차·숙소 일정을 추가하거나 고칠 수 있습니다.\n\n아티스트를 초청하는 프로모터는 인바운드 투어를 운영할 수 있습니다. 공연일과 팀을 추가하고, 예약 메일로 팀별 항공·픽업·숙소·일정·백라인을 채우고, 아직 확정되지 않은 것을 확인하고, 게스트 요청을 결정하고, 아티스트가 보낸 답변을 반영합니다. 프로모터 링크에서 팀을 저장한 아티스트는 일정 확인, 정보 요청 답변, 게스트 신청을 할 수 있습니다.\n\ntour.foreignbody.app에서 로그인하고 연결을 승인합니다. 연결은 내 tour body 계정, 즉 앱에서 내가 볼 수 있는 투어에만 접근합니다. 삭제, 초대, 팀 링크 공유, 메시지 발송, 결제는 할 수 없고, 게스트 이메일과 전화번호는 돌려주지 않습니다."
+            "description": "tour body는 아티스트, 투어 매니저, 프로모터, 크루를 위한 foreign body의 투어 관리 앱입니다. 연결하면 대화에서 투어의 날짜별 일정, 멤버와 역할, 항공·기차·숙소, 서류 제목, 서류에서 가져와 검토한 운영 정보를 확인할 수 있습니다. 내용을 확인하고 승인하면 에이전트가 투어를 만들거나 투어 정보를 수정하고, 항공·기차·숙소 일정을 추가하거나 고치고, 예약 메일 등에서 찾은 준비물을 팀 준비물이나 내 준비물에 넣을 수 있습니다.\n\n아티스트를 초청하는 프로모터는 인바운드 투어를 운영할 수 있습니다. 공연일과 팀을 추가하고, 예약 메일로 팀별 항공·픽업·숙소·일정·백라인을 채우고, 아직 확정되지 않은 것을 확인하고, 게스트 요청을 결정하고, 아티스트가 보낸 답변을 반영합니다. 프로모터 링크에서 팀을 저장한 아티스트는 일정 확인, 정보 요청 답변, 게스트 신청을 할 수 있습니다.\n\ntour.foreignbody.app에서 로그인하고 연결을 승인합니다. 연결은 내 tour body 계정, 즉 앱에서 내가 볼 수 있는 투어에만 접근합니다. AI가 추가한 준비물 말고는 지울 수 없습니다(지운 준비물은 tour body에서 30일 동안 되살릴 수 있습니다). 초대, 팀 링크 공유, 메시지 발송, 결제는 할 수 없고, 게스트 이메일과 전화번호는 돌려주지 않습니다."
           },
           "ja-JP": {
             "subtitle": "ツアー・フライト・宿泊を管理",
-            "description": "tour bodyは、アーティスト、ツアーマネージャー、プロモーター、クルーのためのforeign bodyのツアー管理アプリです。接続すると、ツアーの日ごとの予定、メンバーと役割、フライト・鉄道・宿泊、書類のタイトル、書類から取り込んで確認済みの運営情報を会話の中で確認できます。内容を確認して承認すると、エージェントがツアーの作成やツアー情報の更新、フライト・鉄道・宿泊の追加や修正を行えます。\n\nアーティストを招聘するプロモーターは、インバウンドツアーを運営できます。公演日とチームを追加し、予約メールからチームごとのフライト・送迎・宿泊・スケジュール・機材を入力し、未確定の項目を確認し、ゲストリクエストを決定し、アーティストからの回答を反映します。プロモーターのリンクからチームを保存したアーティストは、日程の確認、情報リクエストへの回答、ゲストリクエストができます。\n\ntour.foreignbody.appでサインインし、接続を許可します。接続先はあなたのtour bodyアカウントだけで、アプリで表示できるツアーにのみアクセスします。削除、招待、チームリンクの共有、メッセージの送信、支払いはできず、ゲストのメールアドレスと電話番号は返しません。"
+            "description": "tour bodyは、アーティスト、ツアーマネージャー、プロモーター、クルーのためのforeign bodyのツアー管理アプリです。接続すると、ツアーの日ごとの予定、メンバーと役割、フライト・鉄道・宿泊、書類のタイトル、書類から取り込んで確認済みの運営情報を会話の中で確認できます。内容を確認して承認すると、エージェントがツアーの作成やツアー情報の更新、フライト・鉄道・宿泊の追加や修正、予約メールなどから見つけた持ち物のチームの持ち物リストや自分の持ち物への追加を行えます。\n\nアーティストを招聘するプロモーターは、インバウンドツアーを運営できます。公演日とチームを追加し、予約メールからチームごとのフライト・送迎・宿泊・スケジュール・機材を入力し、未確定の項目を確認し、ゲストリクエストを決定し、アーティストからの回答を反映します。プロモーターのリンクからチームを保存したアーティストは、日程の確認、情報リクエストへの回答、ゲストリクエストができます。\n\ntour.foreignbody.appでサインインし、接続を許可します。接続先はあなたのtour bodyアカウントだけで、アプリで表示できるツアーにのみアクセスします。AIが追加した持ち物（tour bodyで30日間は元に戻せます）以外は削除できません。招待、チームリンクの共有、メッセージの送信、支払いはできず、ゲストのメールアドレスと電話番号は返しません。"
           }
         }
       }
