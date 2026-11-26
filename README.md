@@ -2,7 +2,7 @@
 
 Connect Codex, ChatGPT and Claude Code to your [tour body](https://tour.foreignbody.app) account. tour body is foreign body's tour management app for artists, tour managers and crew.
 
-Your agent can read your tours: schedule days, members and their roles, flights, trains, hotel stays, document titles and reviewed details imported from tour documents. After you approve a change, it can create a tour, update tour details, add or edit flights, trains and hotel stays, and add items to the team's packing list or your own.
+Your agent can read your tours: schedule days, members and their roles, flights, trains, hotel stays, document titles and reviewed details imported from tour documents. After you approve a change, it can create a tour, update tour details, add or edit flights, trains and hotel stays, and add items to the team's packing list or your own. It reads e-tickets and booking emails itself and saves each flight segment, and tour body adds the tour's missing departure, arrival and stay days for it.
 
 Promoters hosting visiting artists can run an inbound tour with it: add show days and teams, fill in each team's travel, pickups, hotel, schedule and backline from booking emails, see what is still open, decide guest requests and apply what artists sent back. Artists who saved a team from a promoter's link can acknowledge it, answer the promoter's requests and send guest requests.
 
@@ -40,7 +40,7 @@ Then run `/mcp`, select the tour body server and choose Authenticate.
 
 Every client uses the same server URL, `https://tour.foreignbody.app/mcp`, and the same tour body sign-in.
 
-- **Claude (claude.ai and Claude Desktop):** Customize > Connectors > Add > Add custom connector (older versions: Settings > Connectors). Name it `tour body`, enter the URL, then Connect, sign in to tour body and select Allow. Custom connectors need a paid Claude plan (Pro, Max, Team or Enterprise); on Team and Enterprise an owner first adds it under Organization settings > Connectors. The Claude mobile apps can use a connector but can't add one.
+- **Claude (claude.ai and Claude Desktop):** Customize > Connectors > Add > Add custom connector (older versions: Settings > Connectors). Name it `tour body`, enter the URL, then Connect, sign in to tour body and select Allow. Every Claude plan can add custom connectors (the Free plan allows one); on Team and Enterprise an owner first adds it under Organization settings > Connectors. The Claude mobile apps can use a connector but can't add one.
 - **Claude Code:** run `claude mcp add --transport http tour-body https://tour.foreignbody.app/mcp`, then run `/mcp` in Claude Code, choose `tour-body` and select Authenticate.
 - **Codex** (the CLI, the IDE extension and Codex in the ChatGPT desktop app share this setup): run `codex mcp add tour-body --url https://tour.foreignbody.app/mcp`, then `codex mcp login tour-body` and sign in in the browser window that opens. To disconnect, run `codex mcp logout tour-body`.
 - **ChatGPT:** a tour body listing in the ChatGPT and Codex plugin directory is coming soon. Until then, if your ChatGPT plan and workspace allow custom MCP servers, go to chatgpt.com/plugins, select + > Add custom MCP server, enter the URL, sign in and select Create as a plugin. Which plans can add one, and whether it can make changes, depends on your ChatGPT plan; see the guide.
